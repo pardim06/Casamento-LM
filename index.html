@@ -1,0 +1,437 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Casamento | Letícia &amp; Moisés</title>
+    <link rel="icon" type="image/svg+xml" href="download.svg">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=Montserrat:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+    <div id="toast" class="toast"></div>
+
+    <!-- ─── Navigation ─────────────────────────────── -->
+    <nav id="navbar" class="nav fixed top-0 w-full z-50">
+        <div class="max-w-6xl mx-auto px-5 md:px-8 h-full flex justify-between items-center gap-4">
+
+            <!-- Logo -->
+            <a href="#home" class="nav-brand" aria-label="Início">
+                <svg class="nav-brand__icon hidden sm:block" width="13" height="13" viewBox="0 0 24 24" fill="#a89f91">
+                    <path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/>
+                </svg>
+                <span class="nav-brand__text">L·M</span>
+            </a>
+
+            <!-- Center date (desktop) -->
+            <div class="nav-date hidden lg:block">12 · 09 · 2026</div>
+
+            <!-- Links -->
+            <div class="nav-links">
+                <a href="#home"      class="nav-link">Home</a>
+                <a href="#galeria"   class="nav-link hidden sm:inline-block">Fotos</a>
+                <a href="#presentes" class="nav-link">Presentes</a>
+                <a href="#presenca"  class="nav-link">Presença</a>
+                <a href="#recados"   class="nav-link hidden sm:inline-block">Recados</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- ─── Hero ────────────────────────────────────── -->
+    <section id="home" class="hero-bg flex items-center justify-center relative text-white">
+        <img src="imagens/foto%20.jpeg" alt="Letícia &amp; Moisés" class="hero-photo" fetchpriority="high" loading="eager">
+        <div class="hero-overlay"></div>
+        <div class="text-center px-4 relative z-10">
+            <div class="logo-box mb-8">
+                <div class="text-5xl md:text-7xl serif">L·M</div>
+            </div>
+            <h1 class="text-4xl md:text-6xl mb-4 serif font-bold">Casamento</h1>
+            <p class="text-lg md:text-xl tracking-[4px] uppercase font-light">12 | 09 | 2026</p>
+        </div>
+        <div class="absolute bottom-10 left-1/2 -translate-x-1/2 animate-bounce z-10">
+            <i data-lucide="chevron-down" class="w-6 h-6"></i>
+        </div>
+    </section>
+
+    <!-- ─── Welcome ─────────────────────────────────── -->
+    <section class="section-welcome py-20 md:py-28 px-6">
+        <div class="max-w-2xl mx-auto text-center">
+
+            <!-- Ornamento superior -->
+            <div class="welcome-ornament">
+                <span class="ornament-line"></span>
+                <svg width="10" height="10" viewBox="0 0 10 10"><polygon points="5,0 10,5 5,10 0,5" fill="currentColor"/></svg>
+                <span class="ornament-line"></span>
+            </div>
+
+            <h2 class="text-3xl md:text-4xl serif text-stone-800 mb-2 tracking-wide">Sejam bem-vindos!</h2>
+            <div class="welcome-sub-line"></div>
+
+            <!-- Divisor ornamental -->
+            <div class="ornamental-divider my-9">
+                <span></span>
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/></svg>
+                <span></span>
+            </div>
+
+            <p class="welcome-text">
+                Estamos muito felizes em compartilhar este momento tão especial com vocês.
+                Preparamos este espaço com carinho para reunir todas as informações sobre o nosso grande dia.
+                Que a contagem regressiva comece, e que possamos celebrar juntos o início desta nova etapa de nossas vidas.
+            </p>
+
+            <!-- Divisor ornamental -->
+            <div class="ornamental-divider my-9">
+                <span></span>
+                <svg width="8" height="8" viewBox="0 0 10 10"><polygon points="5,0 10,5 5,10 0,5" fill="currentColor"/></svg>
+                <span></span>
+            </div>
+
+            <div class="flex flex-col sm:flex-row gap-4 justify-center">
+                <a href="#presentes" class="btn-elegant">Ver Lista de Presentes</a>
+                <a href="#presenca"  class="btn-elegant btn-elegant--filled">Confirmar Presença</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- ─── Countdown ───────────────────────────────── -->
+    <section id="countdown" class="section-countdown py-20 md:py-28 px-6">
+        <div class="max-w-4xl mx-auto text-center">
+
+            <!-- Ornamento -->
+            <div class="welcome-ornament countdown-ornament mb-6">
+                <span class="ornament-line"></span>
+                <svg width="8" height="8" viewBox="0 0 10 10"><polygon points="5,0 10,5 5,10 0,5" fill="currentColor"/></svg>
+                <span class="ornament-line"></span>
+            </div>
+
+            <h2 class="text-3xl md:text-4xl serif mb-12 countdown-title">Faltam</h2>
+
+            <div class="countdown-row">
+                <div class="countdown-unit">
+                    <div class="countdown-box">
+                        <span id="days" class="countdown-number">00</span>
+                    </div>
+                    <span class="countdown-label">Dias</span>
+                </div>
+
+                <div class="countdown-sep">:</div>
+
+                <div class="countdown-unit">
+                    <div class="countdown-box">
+                        <span id="hours" class="countdown-number">00</span>
+                    </div>
+                    <span class="countdown-label">Horas</span>
+                </div>
+
+                <div class="countdown-sep">:</div>
+
+                <div class="countdown-unit">
+                    <div class="countdown-box">
+                        <span id="minutes" class="countdown-number">00</span>
+                    </div>
+                    <span class="countdown-label">Minutos</span>
+                </div>
+
+                <div class="countdown-sep">:</div>
+
+                <div class="countdown-unit">
+                    <div class="countdown-box">
+                        <span id="seconds" class="countdown-number">00</span>
+                    </div>
+                    <span class="countdown-label">Segundos</span>
+                </div>
+            </div>
+
+            <div class="mt-12">
+                <button onclick="adicionarCalendario()" class="btn-calendar">
+                    <i data-lucide="calendar" class="w-3 h-3"></i> Salvar no Calendário
+                </button>
+            </div>
+        </div>
+    </section>
+
+    <!-- ─── Gallery ─────────────────────────────────── -->
+    <section id="galeria" class="py-24 bg-stone-50 px-6">
+        <div class="max-w-6xl mx-auto">
+            <div class="text-center mb-16">
+                <h2 class="text-4xl serif mb-4 text-stone-800">Nossa Galeria</h2>
+                <div class="w-20 h-[1px] bg-stone-300 mx-auto mb-6"></div>
+            </div>
+            <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6">
+                <div class="photo-card bg-white p-2 shadow-sm">
+                    <img src="imagens/foto1.jpeg" alt="Foto 1" class="w-full h-80 object-cover grayscale hover:grayscale-0 transition-all duration-500">
+                </div>
+                <div class="photo-card bg-white p-2 shadow-sm">
+                    <img src="imagens/foto2.jpeg" alt="Foto 2" class="w-full h-80 object-cover grayscale hover:grayscale-0 transition-all duration-500">
+                </div>
+                <div class="photo-card bg-white p-2 shadow-sm">
+                    <img src="imagens/foto3.jpeg" alt="Foto 3" class="w-full h-80 object-cover grayscale hover:grayscale-0 transition-all duration-500">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ─── Location ────────────────────────────────── -->
+    <section class="py-24 px-6">
+        <div class="max-w-6xl mx-auto grid md:grid-cols-2 gap-12 items-center">
+            <div>
+                <h2 class="text-3xl mb-6 serif text-stone-800">Onde será o Casamento</h2>
+                <div class="space-y-4 text-gray-600 font-light">
+                    <p class="flex items-center gap-3">
+                        <i data-lucide="map-pin" class="w-5 h-5 flex-shrink-0"></i>
+                        Rua Atalaia, 62 — Jaqueline, Belo Horizonte - MG
+                    </p>
+                    <p class="flex items-center gap-3">
+                        <i data-lucide="clock" class="w-5 h-5 flex-shrink-0"></i>
+                        Às 15h00
+                    </p>
+                    <div class="pt-6">
+                        <a href="https://www.google.com/maps/search/?api=1&query=R.+Atal%C3%A1ia%2C+62+-+Jaqueline%2C+Belo+Horizonte+-+MG"
+                           target="_blank" class="btn-elegant">Abrir no Maps</a>
+                    </div>
+                </div>
+            </div>
+            <div class="h-64 md:h-80 w-full rounded-sm overflow-hidden border border-stone-100 shadow-sm">
+                <iframe
+                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3753.1166649727566!2d-43.9482329!3d-19.8350035!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0xbb1f856742a8d3%3A0xb6fecbd653de8e9b!2sR.%20Atal%C3%A1ia%2C%2062%20-%20Jaqueline%2C%20Belo%20Horizonte%20-%20MG%2C%2031748-400!5e0!3m2!1spt-BR!2sbr!4v1712410000000!5m2!1spt-BR!2sbr"
+                    width="100%" height="100%" style="border:0;" allowfullscreen="" loading="lazy">
+                </iframe>
+            </div>
+        </div>
+    </section>
+
+    <!-- ─── Gift Registry ────────────────────────────── -->
+    <section id="presentes" class="py-24 bg-stone-50 border-y border-stone-100 px-6">
+        <div class="max-w-6xl mx-auto text-center mb-16">
+            <h2 class="text-4xl serif mb-4 text-stone-800">Lista de Presentes</h2>
+            <div class="w-20 h-[1px] bg-stone-300 mx-auto mb-6"></div>
+            <p class="text-gray-500 font-light italic max-w-xl mx-auto">
+                Muitos de vocês já nos abençoaram com presentes durante o Chá de Panela,
+                e somos imensamente gratos por todo o carinho recebido.
+                Para quem ainda deseja nos presentear nesta nova etapa, disponibilizamos abaixo nossa lista.
+            </p>
+        </div>
+        <div class="max-w-6xl mx-auto grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6"
+             id="gift-list"></div>
+    </section>
+
+    <!-- ─── Gift Modal ───────────────────────────────── -->
+    <div id="modal-reserva" class="modal-overlay" onclick="fecharModal(event)">
+        <div class="modal-box" onclick="event.stopPropagation()">
+
+            <button class="modal-close" onclick="fecharModal()" aria-label="Fechar">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+                    <line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/>
+                </svg>
+            </button>
+
+            <div class="modal-header">
+                <div class="modal-icon">
+                    <svg width="38" height="38" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4">
+                        <path d="M20 12v10H4V12"/>
+                        <path d="M22 7H2v5h20V7z"/>
+                        <path d="M12 22V7"/>
+                        <path d="M12 7H7.5a2.5 2.5 0 0 1 0-5C11 2 12 7 12 7z"/>
+                        <path d="M12 7h4.5a2.5 2.5 0 0 0 0-5C13 2 12 7 12 7z"/>
+                    </svg>
+                </div>
+                <h3 class="modal-title" id="modal-title"></h3>
+                <p  class="modal-desc"  id="modal-desc"></p>
+                <span class="modal-price" id="modal-price"></span>
+            </div>
+
+            <div class="modal-body">
+                <p class="payment-label">Como deseja presentear?</p>
+
+                <!-- Payment method buttons -->
+                <div class="payment-methods">
+                    <button class="payment-btn payment-btn--pix" onclick="mostrarPIX()">
+                        <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="#00a859" stroke-width="1.8">
+                            <rect x="3" y="3" width="7" height="7" rx="1"/>
+                            <rect x="14" y="3" width="7" height="7" rx="1"/>
+                            <rect x="3" y="14" width="7" height="7" rx="1"/>
+                            <rect x="14" y="14" width="3" height="3"/>
+                            <rect x="18" y="18" width="3" height="3"/>
+                            <rect x="14" y="18" width="3" height="3"/>
+                            <rect x="18" y="14" width="3" height="3"/>
+                        </svg>
+                        <span>PIX</span>
+                    </button>
+
+                    <button id="payment-card-wrapper" class="payment-btn payment-btn--card" onclick="mostrarCartao()">
+                        <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="#2c6fad" stroke-width="1.8">
+                            <rect x="2" y="5" width="20" height="14" rx="2"/>
+                            <line x1="2" y1="10" x2="22" y2="10"/>
+                            <line x1="6" y1="15" x2="10" y2="15"/>
+                        </svg>
+                        <span>Cartão</span>
+                    </button>
+                </div>
+
+                <!-- PIX panel -->
+                <div class="pix-panel">
+                    <div class="qr-container">
+                        <img id="pix-qr-img" src="" alt="QR Code PIX" width="190" height="190">
+                    </div>
+                    <div class="pix-key-box">
+                        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#00a859" stroke-width="2">
+                            <path d="M21 2l-2 2m-7.61 7.61a5.5 5.5 0 1 1-7.778 7.778 5.5 5.5 0 0 1 7.777-7.777zm0 0L15.5 7.5m0 0l3 3L22 7l-3-3m-3.5 3.5L19 4"/>
+                        </svg>
+                        Chave PIX: <strong id="pix-key-display"></strong>
+                    </div>
+                    <p class="pix-amount-info">Valor sugerido: <strong id="pix-amount"></strong></p>
+                    <button class="btn-copy-pix" onclick="copiarChavePIX()">
+                        <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2">
+                            <rect x="9" y="9" width="13" height="13" rx="2"/>
+                            <path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"/>
+                        </svg>
+                        Copiar Chave PIX
+                    </button>
+                </div>
+
+                <!-- Card panel -->
+                <div class="card-panel">
+                    <div class="card-panel-inner">
+                        <svg width="36" height="36" viewBox="0 0 24 24" fill="none" stroke="#2c6fad" stroke-width="1.6">
+                            <rect x="2" y="5" width="20" height="14" rx="2"/>
+                            <line x1="2" y1="10" x2="22" y2="10"/>
+                            <line x1="6" y1="15" x2="10" y2="15"/>
+                        </svg>
+                        <p class="card-panel-text">Clique abaixo para pagar<br>com cartão de crédito ou débito.</p>
+                        <a id="btn-card-pay" href="#" target="_blank" class="btn-card-pay">
+                            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2">
+                                <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/>
+                                <polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/>
+                            </svg>
+                            Pagar com Cartão
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Actions -->
+                <div class="modal-actions">
+                    <a id="btn-whatsapp" href="#" target="_blank" class="btn-whatsapp">
+                        <svg width="16" height="16" viewBox="0 0 24 24" fill="white">
+                            <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 0 1-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 0 1-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 0 1 2.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0 0 12.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 0 0 5.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 0 0-3.48-8.413z"/>
+                        </svg>
+                        Avisar pelo WhatsApp
+                    </a>
+                    <a id="btn-product" href="#" target="_blank" class="btn-product-link">
+                        <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <circle cx="9" cy="21" r="1"/><circle cx="20" cy="21" r="1"/>
+                            <path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"/>
+                        </svg>
+                        Sugestão de Compra
+                    </a>
+                    <button class="btn-close-modal" onclick="fecharModal()">Fechar</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- ─── RSVP ─────────────────────────────────────── -->
+    <section id="presenca" class="section-form py-24 px-6">
+        <div class="max-w-lg mx-auto">
+
+            <!-- Header -->
+            <div class="text-center mb-10">
+                <div class="form-section-icon">
+                    <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6">
+                        <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/>
+                        <circle cx="12" cy="7" r="4"/>
+                    </svg>
+                </div>
+                <h2 class="text-4xl serif mb-3 text-stone-800">Confirmar Presença</h2>
+                <div class="w-16 h-[1px] bg-stone-300 mx-auto mb-4"></div>
+                <p class="text-stone-400 font-light italic text-sm">Será uma honra ter você em nosso grande dia.</p>
+            </div>
+
+            <!-- Form card -->
+            <div class="form-card">
+                <form id="rsvp-form" class="space-y-5">
+                    <div class="form-group">
+                        <label>
+                            <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>
+                            Nome Completo
+                        </label>
+                        <input type="text" placeholder="Como devemos te chamar?" required>
+                    </div>
+                    <div class="form-group">
+                        <label>
+                            <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
+                            Número de Adultos
+                        </label>
+                        <input type="number" placeholder="Quantos adultos virão?" min="1" required>
+                    </div>
+                    <button type="submit" class="btn-form-submit">
+                        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2.2"><polyline points="20 6 9 17 4 12"/></svg>
+                        Confirmar Presença
+                    </button>
+                </form>
+            </div>
+
+            <!-- Deadline notice -->
+            <div class="deadline-notice">
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+                Confirme até <strong>12 de agosto de 2026</strong>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- ─── Messages ─────────────────────────────────── -->
+    <section id="recados" class="section-recados py-24 px-6">
+        <div class="max-w-2xl mx-auto">
+
+            <!-- Header -->
+            <div class="text-center mb-10">
+                <div class="form-section-icon recados-icon">
+                    <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6">
+                        <path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/>
+                    </svg>
+                </div>
+                <h2 class="text-4xl serif mb-3 text-stone-800">Recados para os Noivos</h2>
+                <div class="w-16 h-[1px] bg-stone-300 mx-auto mb-4"></div>
+                <p class="text-stone-400 font-light italic text-sm">Deixe uma mensagem especial para o casal.</p>
+            </div>
+
+            <!-- Form card -->
+            <div class="form-card">
+                <form id="comment-form" class="space-y-5">
+                    <div class="form-group">
+                        <label>
+                            <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>
+                            Seu Nome
+                        </label>
+                        <input type="text" id="comment-name" placeholder="Como você se chama?" required>
+                    </div>
+                    <div class="form-group">
+                        <label>
+                            <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg>
+                            Sua Mensagem
+                        </label>
+                        <textarea id="comment-text" placeholder="Escreva algo especial para os noivos..." required rows="5"></textarea>
+                    </div>
+                    <button type="submit" class="btn-form-submit btn-whatsapp-submit">
+                        <svg width="16" height="16" viewBox="0 0 24 24" fill="white">
+                            <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 0 1-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 0 1-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 0 1 2.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0 0 12.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 0 0 5.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 0 0-3.48-8.413z"/>
+                        </svg>
+                        Enviar pelo WhatsApp
+                    </button>
+                </form>
+            </div>
+
+        </div>
+    </section>
+
+    <footer class="py-12 text-center text-stone-400 text-xs uppercase tracking-[3px]">
+        L &amp; M — 2026
+    </footer>
+
+    <script src="/Casamento-LM-main/js/main.js"></script>
+</body>
+</html>

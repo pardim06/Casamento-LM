@@ -1,0 +1,33 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100">
+  <!-- Warm dark background -->
+  <rect width="100" height="100" fill="#3d2b1f" rx="18"/>
+  <!-- Gold outer border -->
+  <rect x="5" y="5" width="90" height="90" fill="none" stroke="#c9a86c" stroke-width="1.6" rx="14"/>
+  <!-- Inner subtle border -->
+  <rect x="9" y="9" width="82" height="82" fill="none" stroke="#c9a86c" stroke-width="0.4" rx="11" opacity="0.4"/>
+  <!-- Top ornament line -->
+  <line x1="20" y1="31" x2="80" y2="31" stroke="#c9a86c" stroke-width="0.8" opacity="0.7"/>
+  <!-- Small diamond top center -->
+  <polygon points="50,24 53,28 50,32 47,28" fill="#c9a86c" opacity="0.6"/>
+  <!-- Main monogram L·M -->
+  <text x="50" y="52"
+    font-family="Georgia, 'Times New Roman', serif"
+    font-size="29"
+    fill="#e8d0a0"
+    text-anchor="middle"
+    dominant-baseline="middle"
+    letter-spacing="3">L·M</text>
+  <!-- Bottom ornament line -->
+  <line x1="20" y1="69" x2="80" y2="69" stroke="#c9a86c" stroke-width="0.8" opacity="0.7"/>
+  <!-- Small diamond bottom center -->
+  <polygon points="50,68 53,72 50,76 47,72" fill="#c9a86c" opacity="0.6"/>
+  <!-- Year text -->
+  <text x="50" y="84"
+    font-family="Georgia, 'Times New Roman', serif"
+    font-size="9"
+    fill="#c9a86c"
+    text-anchor="middle"
+    dominant-baseline="middle"
+    letter-spacing="4"
+    opacity="0.75">2026</text>
+</svg>
