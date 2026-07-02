@@ -432,6 +432,160 @@
         L &amp; M — 2026
     </footer>
 
-    <script src="/Casamento-LM-main/js/main.js"></script>
+    <script>
+'use strict';
+
+const CONFIG = {
+    whatsapp: "31985097424",
+    pix: { key: "+5531985097424", name: "Leticia Moises", city: "Belo Horizonte" },
+    cardPaymentUrl: "https://link.mercadopago.com.br/lmcasament",
+};
+
+const presentes = [
+    { id: 1,  cat: 'lua-de-mel', nome: 'Ajude com a Lua de Mel',           desc: 'Contribua para a nossa viagem dos sonhos',    preco: 'R$ 100,00',   img: 'imagens/Ajude%20a%20mala.png',       url: '' },
+    { id: 2,  cat: 'lua-de-mel', nome: 'Mapa Mundi Decorativo',             desc: 'Para marcar os destinos que vamos explorar',  preco: 'R$ 80,00',    img: 'imagens/Mapa.png',                   url: '' },
+    { id: 3,  cat: 'cerimonia',  nome: 'Buquê da Noiva',                    desc: 'Arranjo floral para a cerimônia',              preco: 'R$ 150,00',   img: 'imagens/buque.png',                  url: '' },
+    { id: 4,  cat: 'cerimonia',  nome: 'Decoração da Cerimônia',            desc: 'Detalhes especiais para o grande dia',         preco: 'R$ 200,00',   img: 'imagens/bugy.png',                   url: '' },
+    { id: 5,  cat: 'casa',       nome: 'Ar-Condicionado',                   desc: 'Clima ideal para o lar dos noivos',            preco: 'R$ 1.800,00', img: 'imagens/Ar%20condicionado.jpeg',     url: '' },
+    { id: 6,  cat: 'casa',       nome: 'Armário',                           desc: 'Organização e espaço para o quarto',           preco: 'R$ 900,00',   img: 'imagens/armario.png',                url: '' },
+    { id: 7,  cat: 'casa',       nome: 'Televisão',                         desc: 'Para os melhores momentos juntos',             preco: 'R$ 1.500,00', img: 'imagens/tv.png',                     url: '' },
+    { id: 8,  cat: 'casa',       nome: 'Robô Aspirador',                    desc: 'Limpeza automática e praticidade no lar',      preco: 'R$ 700,00',   img: 'imagens/Rob%C3%B4%20aspirador%20.jpeg', url: '' },
+    { id: 9,  cat: 'casa',       nome: 'Cortina Branca',                    desc: 'Elegância e leveza para os ambientes',         preco: 'R$ 250,00',   img: 'imagens/Cortina%20Branca.jpeg',      url: '' },
+    { id: 10, cat: 'casa',       nome: 'Cortina',                           desc: 'Decoração e privacidade para o lar',           preco: 'R$ 220,00',   img: 'imagens/cortina.jpeg',               url: '' },
+    { id: 11, cat: 'casa',       nome: 'Varal Retrátil 100cm',              desc: 'Praticidade para o dia a dia',                 preco: 'R$ 120,00',   img: 'imagens/Varal%20retr%C3%A1til%20100cm.jpeg', url: '' },
+    { id: 12, cat: 'casa',       nome: 'Luminária de Apoio',                desc: 'Iluminação e aconchego para o ambiente',       preco: 'R$ 180,00',   img: 'imagens/Apoio.png',                  url: '' },
+    { id: 13, cat: 'casa',       nome: 'Kit Decoração',                     desc: 'Itens de decoração para o lar',                preco: 'R$ 160,00',   img: 'imagens/2.png',                      url: '' },
+    { id: 14, cat: 'casa',       nome: 'Kit Organização',                   desc: 'Organização e estilo para a casa',             preco: 'R$ 140,00',   img: 'imagens/4.png',                      url: '' },
+    { id: 15, cat: 'casa',       nome: 'Presente Especial',                 desc: 'Uma surpresa para os noivos',                  preco: 'R$ 200,00',   img: 'imagens/Screenshot_20260207_181144_Samsung%20Internet.jpg', url: '' },
+    { id: 16, cat: 'cozinha',    nome: 'Batedeira Stand Mixer',             desc: 'Para as melhores receitas',                    preco: 'R$ 500,00',   img: 'imagens/cozinha/BATEDEIRA%2B.jpeg',  url: '' },
+    { id: 17, cat: 'cozinha',    nome: 'Forno Elétrico para Embutir',       desc: 'Praticidade e modernidade na cozinha',         preco: 'R$ 1.200,00', img: 'imagens/cozinha/Forno%20El%C3%A9trico%20para%20Embutir.jpeg', url: '' },
+    { id: 18, cat: 'cozinha',    nome: 'Lava-Louças',                       desc: 'Mais tempo juntos e menos na pia',             preco: 'R$ 2.000,00', img: 'imagens/cozinha/Lava-Lou%C3%A7as.jpeg', url: '' },
+    { id: 19, cat: 'cozinha',    nome: 'Liquidificador Mix 2 Velocidades',  desc: 'Versatilidade para o dia a dia',               preco: 'R$ 280,00',   img: 'imagens/cozinha/Mix%202%20Velocidades.jpeg', url: '' },
+    { id: 20, cat: 'cozinha',    nome: 'Aparelho de Jantar Chique',         desc: 'Para receber com elegância',                   preco: 'R$ 450,00',   img: 'imagens/cozinha/pratos%20chiques.jpeg', url: '' },
+    { id: 21, cat: 'cozinha',    nome: 'Jogo de Pratos Rasos',              desc: 'Para as refeições do dia a dia',               preco: 'R$ 280,00',   img: 'imagens/cozinha/pratos%20rasos.jpeg',  url: '' },
+    { id: 22, cat: 'cozinha',    nome: 'Aparelho de Jantar',                desc: 'Conjunto completo para a mesa',                preco: 'R$ 350,00',   img: 'imagens/cozinha/pratos.jpeg',          url: '' },
+    { id: 23, cat: 'cozinha',    nome: 'Depurador de Ar',                   desc: 'Para uma cozinha sempre fresquinha',           preco: 'R$ 400,00',   img: 'imagens/depurador.png',               url: '' },
+    { id: 24, cat: 'quarto',     nome: 'Base Box',                          desc: 'Conforto e suporte para um bom sono',          preco: 'R$ 800,00',   img: 'imagens/base.png',                   url: '' },
+    { id: 25, cat: 'quarto',     nome: 'Cabeceira Estofada Bege Escuro',    desc: 'Elegância e conforto para o quarto',           preco: 'R$ 600,00',   img: 'imagens/quarto/Cabeceira%20Estofada%20Bege%20Escuro.jpeg', url: '' },
+    { id: 26, cat: 'quarto',     nome: 'Forro de Cama',                     desc: 'Proteção e conforto para o colchão',           preco: 'R$ 180,00',   img: 'imagens/quarto/forro%204.jpeg',        url: '' },
+    { id: 27, cat: 'quarto',     nome: 'Forro de Cama (opção 1)',           desc: 'Macio e resistente para o dia a dia',          preco: 'R$ 160,00',   img: 'imagens/quarto/forro%20de%20cama1.jpeg', url: '' },
+    { id: 28, cat: 'quarto',     nome: 'Forro de Cama (opção 2)',           desc: 'Qualidade e durabilidade garantidas',           preco: 'R$ 160,00',   img: 'imagens/quarto/forro%20de%20cama2.jpeg', url: '' },
+    { id: 29, cat: 'quarto',     nome: 'Forro de Cama (opção 3)',           desc: 'Conforto para as noites de descanso',          preco: 'R$ 160,00',   img: 'imagens/quarto/forro%20de%20cama3.jpeg', url: '' },
+    { id: 30, cat: 'quarto',     nome: 'Jogo de Lençol',                    desc: 'Maciez e elegância para o quarto',             preco: 'R$ 250,00',   img: 'imagens/quarto/jogo%20de%20lencou.jpeg', url: '' },
+    { id: 31, cat: 'quarto',     nome: 'Lençol',                            desc: 'Suave e fresquinho para boas noites',          preco: 'R$ 200,00',   img: 'imagens/quarto/len%C3%A7ou4.jpeg',     url: '' },
+    { id: 32, cat: 'quarto',     nome: 'Travesseiro',                       desc: 'Para os melhores sonhos a dois',               preco: 'R$ 120,00',   img: 'imagens/quarto/travesseriro.jpeg',     url: '' },
+    { id: 33, cat: 'banheiro',   nome: 'Chuveiro Elétrico',                 desc: 'Conforto e eficiência no banho',               preco: 'R$ 350,00',   img: 'imagens/banheiro/Chuveiro%20.jpeg',   url: '' },
+    { id: 34, cat: 'banheiro',   nome: 'Toalha Azul',                       desc: 'Maciez e absorção de qualidade',               preco: 'R$ 80,00',    img: 'imagens/banheiro/toalha%20azul.jpeg', url: '' },
+    { id: 35, cat: 'banheiro',   nome: 'Toalha Branca',                     desc: 'Elegância e maciez para o banheiro',           preco: 'R$ 80,00',    img: 'imagens/banheiro/toalha%20branca%20.jpeg', url: '' },
+    { id: 36, cat: 'banheiro',   nome: 'Toalha',                            desc: 'Conforto após cada banho',                     preco: 'R$ 75,00',    img: 'imagens/banheiro/toalhe.jpeg',        url: '' },
+    { id: 37, cat: 'banheiro',   nome: 'Toalha Verde',                      desc: 'Cor e frescor para o banheiro',                preco: 'R$ 75,00',    img: 'imagens/banheiro/tolha%20verde.jpeg', url: '' },
+];
+
+function parsePriceToFloat(s) {
+    if (!s) return null;
+    var v = parseFloat(s.replace(/[^\d,]/g,'').replace(',','.'));
+    return isNaN(v) ? null : v.toFixed(2);
+}
+function calcCRC16(p) {
+    var c = 0xFFFF;
+    for (var i=0;i<p.length;i++){c^=p.charCodeAt(i)<<8;for(var j=0;j<8;j++)c=c&0x8000?(c<<1)^0x1021:c<<1;}
+    return (c&0xFFFF).toString(16).toUpperCase().padStart(4,'0');
+}
+function gerarPixPayload(priceStr) {
+    var key=CONFIG.pix.key, name=CONFIG.pix.name, city=CONFIG.pix.city;
+    function emv(id,val){var v=String(val);return id+v.length.toString().padStart(2,'0')+v;}
+    var amt=parsePriceToFloat(priceStr);
+    var pi=emv('00','BR.GOV.BCB.PIX')+emv('01',key);
+    var pl=[emv('00','01'),emv('26',pi),emv('52','0000'),emv('53','986'),amt?emv('54',amt):'',emv('58','BR'),emv('59',name.substring(0,25)),emv('60',city.substring(0,15)),emv('62',emv('05','***')),'6304'].join('');
+    return pl+calcCRC16(pl);
+}
+function showToast(msg) {
+    var t=document.getElementById('toast');t.textContent=msg;t.classList.add('show');setTimeout(function(){t.classList.remove('show');},3000);
+}
+function badgeLabel(cat) {
+    return {cozinha:'Cozinha',quarto:'Quarto',banheiro:'Banheiro','lua-de-mel':'Lua de Mel',cerimonia:'Cerimônia',casa:'Casa'}[cat]||cat;
+}
+function renderGifts() {
+    var list=document.getElementById('gift-list');if(!list)return;
+    list.innerHTML=presentes.map(function(p){
+        return '<div class="gift-card" role="button" tabindex="0" onclick="abrirModal('+p.id+')" onkeydown="if(event.key===\'Enter\')abrirModal('+p.id+')">'
+            +'<div class="gift-card__image"><img src="'+p.img+'" alt="'+p.nome+'" loading="lazy"><span class="gift-card__badge badge-'+p.cat+'">'+badgeLabel(p.cat)+'</span></div>'
+            +'<div class="gift-card__body"><h3 class="gift-card__name">'+p.nome+'</h3><p class="gift-card__desc">'+p.desc+'</p><div class="gift-card__price">'+p.preco+'</div><button class="gift-card__btn">Presentear</button></div>'
+            +'</div>';
+    }).join('');
+}
+var _modalPresente=null;
+function abrirModal(id) {
+    var p=presentes.find(function(x){return x.id===id;});if(!p)return;
+    _modalPresente=p;
+    document.getElementById('modal-title').textContent=p.nome;
+    document.getElementById('modal-desc').textContent=p.desc;
+    document.getElementById('modal-price').textContent=p.preco;
+    var msg=encodeURIComponent('Olá! Quero presentear com: *'+p.nome+'* ('+p.preco+') 🎁');
+    document.getElementById('btn-whatsapp').href='https://wa.me/55'+CONFIG.whatsapp+'?text='+msg;
+    var bp=document.getElementById('btn-product');
+    if(p.url){bp.href=p.url;bp.style.display='';}else{bp.style.display='none';}
+    document.getElementById('payment-card-wrapper').style.display=CONFIG.cardPaymentUrl?'':'none';
+    document.querySelector('.pix-panel').classList.remove('is-open');
+    document.querySelector('.card-panel').classList.remove('is-open');
+    document.querySelector('.payment-btn--pix').classList.remove('is-active');
+    document.querySelector('.payment-btn--card').classList.remove('is-active');
+    document.getElementById('modal-reserva').classList.add('is-open');
+    document.body.style.overflow='hidden';
+}
+function fecharModal(e) {
+    if(e&&e.target!==document.getElementById('modal-reserva'))return;
+    document.getElementById('modal-reserva').classList.remove('is-open');
+    document.body.style.overflow='';_modalPresente=null;
+}
+function mostrarPIX() {
+    if(!_modalPresente)return;var p=_modalPresente;
+    document.getElementById('pix-qr-img').src='https://api.qrserver.com/v1/create-qr-code/?size=190x190&data='+encodeURIComponent(gerarPixPayload(p.preco));
+    document.getElementById('pix-key-display').textContent=CONFIG.pix.key;
+    document.getElementById('pix-amount').textContent=p.preco;
+    document.querySelector('.pix-panel').classList.add('is-open');
+    document.querySelector('.card-panel').classList.remove('is-open');
+    document.querySelector('.payment-btn--pix').classList.add('is-active');
+    document.querySelector('.payment-btn--card').classList.remove('is-active');
+}
+function mostrarCartao() {
+    if(!CONFIG.cardPaymentUrl)return;
+    document.getElementById('btn-card-pay').href=CONFIG.cardPaymentUrl;
+    document.querySelector('.card-panel').classList.add('is-open');
+    document.querySelector('.pix-panel').classList.remove('is-open');
+    document.querySelector('.payment-btn--card').classList.add('is-active');
+    document.querySelector('.payment-btn--pix').classList.remove('is-active');
+}
+function copiarChavePIX() {
+    navigator.clipboard.writeText(CONFIG.pix.key).then(function(){showToast('Chave PIX copiada! ✓');}).catch(function(){
+        var ta=document.createElement('textarea');ta.value=CONFIG.pix.key;document.body.appendChild(ta);ta.select();document.execCommand('copy');document.body.removeChild(ta);showToast('Chave PIX copiada! ✓');
+    });
+}
+function updateCountdown() {
+    var diff=new Date('2026-09-12T15:00:00-03:00')-new Date();
+    if(diff<=0){['days','hours','minutes','seconds'].forEach(function(id){document.getElementById(id).textContent='00';});return;}
+    document.getElementById('days').textContent=String(Math.floor(diff/86400000)).padStart(2,'0');
+    document.getElementById('hours').textContent=String(Math.floor((diff%86400000)/3600000)).padStart(2,'0');
+    document.getElementById('minutes').textContent=String(Math.floor((diff%3600000)/60000)).padStart(2,'0');
+    document.getElementById('seconds').textContent=String(Math.floor((diff%60000)/1000)).padStart(2,'0');
+}
+function adicionarCalendario() {
+    window.open('https://www.google.com/calendar/render?action=TEMPLATE&text=Casamento+Let%C3%ADcia+%26+Mois%C3%A9s&dates=20260912T180000Z/20260912T230000Z&location=R.+Atal%C3%A1ia%2C+62+-+Jaqueline%2C+Belo+Horizonte+-+MG&sf=true&output=xml','_blank');
+}
+document.addEventListener('DOMContentLoaded', function() {
+    lucide.createIcons();
+    renderGifts();
+    var rsvp=document.getElementById('rsvp-form');
+    if(rsvp){rsvp.addEventListener('submit',function(e){e.preventDefault();var ins=rsvp.querySelectorAll('input'),nome=ins[0].value.trim(),adultos=ins[1].value.trim();if(!nome||!adultos)return;window.open('https://wa.me/55'+CONFIG.whatsapp+'?text='+encodeURIComponent('Olá! Confirmo minha presença no casamento de Letícia e Moisés! 🎉\n*Nome:* '+nome+'\n*Adultos:* '+adultos),'_blank');rsvp.reset();showToast('Presença confirmada! ✓');});}
+    var cf=document.getElementById('comment-form');
+    if(cf){cf.addEventListener('submit',function(e){e.preventDefault();var nome=document.getElementById('comment-name').value.trim(),texto=document.getElementById('comment-text').value.trim();if(!nome||!texto)return;window.open('https://wa.me/55'+CONFIG.whatsapp+'?text='+encodeURIComponent('💌 *Recado para os noivos de '+nome+':*\n\n'+texto),'_blank');cf.reset();showToast('Recado enviado! ✓');});}
+    var nav=document.getElementById('navbar');
+    window.addEventListener('scroll',function(){nav.classList.toggle('is-scrolled',window.scrollY>20);},{passive:true});
+    var obs=new IntersectionObserver(function(entries){entries.forEach(function(e){if(e.isIntersecting){document.querySelectorAll('.nav-link').forEach(function(l){l.classList.remove('is-active');});var a=document.querySelector('.nav-link[href="#'+e.target.id+'"]');if(a)a.classList.add('is-active');}});},{rootMargin:'-35% 0px -60% 0px',threshold:0});
+    document.querySelectorAll('section[id]').forEach(function(s){obs.observe(s);});
+    updateCountdown();setInterval(updateCountdown,1000);
+    document.addEventListener('keydown',function(e){if(e.key==='Escape'){document.getElementById('modal-reserva').classList.remove('is-open');document.body.style.overflow='';_modalPresente=null;}});
+});
+    </script>
 </body>
 </html>
